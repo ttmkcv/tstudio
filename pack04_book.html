@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Book Service</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="CSS/bootstrap.css">
+<link rel="stylesheet" href="CSS/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Chela+One|Chonburi|Indie+Flower|Lobster|Dancing+Script|Questrial|Comfortaa|Righteous|Shadows+Into+Light|Galada|Oleo+Script|Kumar+One|Coda" rel="stylesheet">
+<link rel="shortcut icon" href="Images/studio.png" width="35px"/>
+
+<script>
+	function checkValid() {
+//		check name
+		var x, text;
+		x = document.getElementById("name").value;
+		if (x == "") {
+			text = "Please input your name !";
+			document.getElementById("checkname").style.display = "block";
+			document.getElementById("checkname").innerHTML = text;
+			return false;
+		}
+		else
+			document.getElementById("checkname").style.display = "none";
+		
+//		check phone number
+		var x, text;
+		var regExp = /(09|01[2|6|8|9])+([0-9]{8})\b/g;
+		x = document.getElementById("phonenum").value;
+		
+		if (regExp.test(x)) {
+			document.getElementById("checkphone").style.display = "none";
+		}
+		else {
+			text = "Phone number must has 10 degits (0xxxxxxxxx) !";
+			document.getElementById("checkphone").style.display = "block";
+			document.getElementById("checkphone").innerHTML = text;
+			return false;
+		}
+		
+//		check email
+		var x, text;
+		var regExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		x = document.getElementById("email").value;
+		if (regExp.test(x)) {
+			document.getElementById("checkemail").style.display = "none";
+		}
+		else {
+			text = "Invalid email! It must be example@abc.xyz";
+			document.getElementById("checkemail").style.display = "block";
+			document.getElementById("checkemail").innerHTML = text;
+			return false;
+		}
+			
+		return true;
+	}
+	
+	
+	
+</script>
+
+</head>
+<body>
+<nav class="navbar-inverse navbar-fixed-top" >
+  <div class="container"> 
+    <!-- Brand and toggle ge t grouped for better mobile display -->
+    <div class="navbar-header" style="margin-left: -15px;">
+<!--     Menu button for moblie display-->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      
+      <a class="navbar-brand" href="index.html" style="font-family: 'Kumar One', cursive;; font-size: 30px; margin-top: 7px; margin-bottom: -5px"> T Studio </a>
+      <div style="float: left;" class="hidden-xs hidden-sm">
+      	  <form class="searchbox" action="/action_page.php" style="width:250px">
+		    <input type="text" style="border-radius: 5px 0 0 5px;" placeholder="Search..." name="search2">
+		    <button type="submit"><i class="fa fa-search" style="color: black;"></i></button>
+		  </form>
+      </div>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myInverseNavbar2">
+     
+      <ul class="nav navbar-nav navbar-right" style="font-family: 'Coda', cursive;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#service">Service</a></li>
+        <li><a href="index.html#team"> About us</a></li>
+        <li><a href="index.html#contact"> Contact</a></li>
+        <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> <i class="fa fa-user"></i> Log in</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+<hr>
+<section>
+  <div class="container setbgcl">
+    <div class="row">
+		<div class="col-md-5 col-lg-5">
+	    	<p class="text-center" style="margin-top: 20px;"><img src="Images/pack04_index.png" alt="" class="image-responsive"></p>  
+         	<hr>
+         	<table style="width: 100%;">
+			  <tbody>
+				<tr>
+				  <td style="text-align: left;">Total:</td>
+				  <td style="text-align: right;">$1,000</td>
+				</tr>
+				<tr>
+				  <td style="text-align: left;">Discount:</td>
+				  <td style="text-align: right;">-5%</td>
+				</tr>
+				<tr>
+				  <td style="text-align: left; font-weight: bold;">Total:</td>
+				  <td style="text-align: right; font-size: 18px; font-weight: bold; color: red;">$950</td>
+				</tr>
+			  </tbody>
+			</table>
+
+        </div>  	
+		
+     
+      <div class="col-md-7 col-lg-7">
+       <h2>Payment</h2>
+		<p>Fill in this form to complete the order</p>
+
+<div class="form-responsive">
+  <form action="/action_page.php" onSubmit="return checkValid();">
+    <div class="row">
+      <div class="col-100">
+        <label class="container-radio" style="margin-right: 20px;">Male
+		  <input type="radio" checked="checked" name="radio1">
+		  <span class="checkmark"></span>
+		</label>
+        <label class="container-radio">Female
+		  <input type="radio" checked="checked" name="radio1">
+		  <span class="checkmark"></span>
+		</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-50">
+        <input type="text" id="name" name="name" placeholder="Your name">
+        <p id="checkname" style="margin-left: 10px; color: red; font-style: italic; display: none;"></p>
+      </div>
+      <div class="col-50">
+        <input type="text" id="phonenum" name="phonenum" onClick="checkValid()" placeholder="Phone number">
+        <p id="checkphone" style="margin-left: 10px; color: red; font-style: italic; display: none;"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-100">
+        <input type="text" id="request" name="request" onClick="checkValid()" placeholder="Others request (optional)">
+      </div>
+    </div>
+    <div class="row">
+    	<div class="col-100"><p style="font-weight: bold; font-size: 18px; margin-bottom: -25px; margin-top: 5px;">Consultancy</p></div>
+    </div>
+    <div class="form-responsive">
+    	
+    		<div class="row">
+			  <div class="col-100" style="margin-left: -20px; margin-bottom: -20px;">				
+				<label class="container-radio" style="margin-right: 20px;">At studio
+				  <input type="radio" checked="checked" name="radio2">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container-radio">By phone
+				  <input type="radio" checked="checked" name="radio2">
+				  <span class="checkmark"></span>
+				</label>
+			  </div>	
+			</div>
+    
+    </div>  
+    <div class="row">
+      <div class="col-50"> <input type="submit" class="payment" onClick="checkValid()" value="PAY AT STUDIO"></div>
+      <div class="col-50"> <input type="submit" class="payment" onClick="checkValid()" value="PAY ONLINE"></div>
+    </div>
+    <hr>
+    <div class="row">
+    	<p style="font-weight: bold; font-size: 18px;"> Online payment is valid with</p>
+    	<img src="Images/mastercard.jpg" class="image-responsive">
+    	<img src="Images/paypal.jpg" class="image-responsive">
+    	<img src="Images/visa.jpg" class="image-responsive">
+    	<img src="Images/tpbank.jpg" class="image-responsive">
+    </div>
+  </form>
+</div>
+      
+      </div>
+      
+    </div>
+  </div>
+</section>
+<br>
+<div class="container well" style="background-color: #262626">
+  <div class="row">
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4 hidden-sm hidden-xs" style="color: white;">
+      <span class="text-right"> </span>
+  <h3>Newsletter</h3>
+  <br>
+  <p>You can trust us. We only send promo offers,<br> not a single spam.</p>
+  <br>
+  <table>
+  <tbody>
+    <tr>
+      <td><input type="email" name="email" class="email form-control"/></td>
+    </tr>
+    <tr>
+     <td><p class="text-center"><input type="submit" class="subscribe" value="Subscribe"/></p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-lg-4 col-md-4" style="color: white;"> <span class="text-right"> </span>
+  <h3>Contact Us</h3>
+  <br>
+
+    <address>
+      <p style="font-size: 18px"><strong>&emsp;&emsp;T Studio</strong><br></p>
+      <p><i class="fa fa-home"></i> &emsp; 34/4A TA32 Street, Thoi An Ward<br>
+      &emsp; &emsp; District 12, Ho Chi Minh City, Vietnam<br>
+     <i class="fa fa-phone-square"></i> &emsp; (028) 7777 7777 <br>
+     &emsp; &emsp; +84 168 563 8900</p>
+    </address>
+
+      <address>
+        <p>&emsp; &emsp; <strong>Phan Thanh Tu</strong><br>
+        <i class="fa fa-send"></i> &emsp; <a href="mailto:#">phanthanhtu9x@gmail.com</a></p>
+      </address>
+</div>
+ <div class="col-xs-12 col-sm-6 col-lg-4 col-md-4 " style="color: white;">
+  <h3>Latest News</h3>
+  <br>
+  <div class="media-object-default" >
+  <p>
+  <a href="https://ngoisao.net/tin-tuc/cuoi-hoi/co-dau/vay-cuoi-he-thu-phom-bong-benh-cong-chua-3767645.html" target="_blank" style="text-decoration: none; color: white;" onMouseOver="this.style.color='#007acc'" onMouseOut="this.style.color='#ffffff'">
+	  <div class="media">
+	  <div class="media-body">
+		  <h4 class="media-heading"> <i class="fa fa-newspaper-o"></i> Wedding Dresses Summer Collection: "Princess"</h4>
+		With the advantages that can fit all shapes, this design is expected to be the first choice of brides.</div>
+		  <div class="media-right"> <img class="media-object" src="Images/news_1.jpg" width="75px" height="75px" alt="placeholder image"></div>
+	</div>
+</a>
+<br/>
+<a href="http://kenh14.vn/anh-xuc-dong-le-cuoi-tap-the-cua-41-cap-vo-chong-khuyet-tat-o-ha-noi-20180623195156304.chn" target="_blank" style="text-decoration: none; color: white;" onMouseOver="this.style.color='#007acc'" onMouseOut="this.style.color='#ffffff'">
+	<div class="media">
+	  <div class="media-body">
+		<h4 class="media-heading"> <i class="fa fa-newspaper-o"></i> Celebrating the wedding ceremony of 41 disabled couples in Hanoi</h4>
+		41 couples with disabilities can not hide the joy and tears of happiness when they attend a group wedding for people in the same circumstances as themselves.</div>
+	  <div class="media-right">  <img class="media-object" src="Images/news_2.jpg" width="75px" height="75px" alt="placeholder image"></div>
+	</div>
+</a>
+</p>
+</div>
+</div>
+  </div>
+</div>
+<footer class="text-center" style="margin-top: -10px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © 2018 tupth.blogspot.com. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

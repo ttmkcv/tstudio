@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>T Studio</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="CSS/bootstrap.css">
+
+<link rel="stylesheet" href="CSS/style.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+<!--google fonts-->
+<link href="https://fonts.googleapis.com/css?family=Chela+One|Chonburi|Indie+Flower|Lobster|Dancing+Script|Questrial|Comfortaa|Righteous|Shadows+Into+Light|Galada|Oleo+Script|Kumar+One|Coda" rel="stylesheet">
+
+<link rel="shortcut icon" href="Images/studio.png" width="35px"/>
+
+<!-- for scroll web  -->
+<script src="js/jquery.js"> </script>
+    
+<!--Scroll_web-->
+<script>
+    $(document).ready(function(){
+      $('#myInverseNavbar2>ul>li>a').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        && location.hostname == this.hostname) {
+          var $target = $(this.hash);
+          $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+          if ($target.length) {
+            var targetOffset = $target.offset().top;
+            $('html,body').animate({scrollTop: targetOffset}, 800);
+           return false;
+          }
+        }
+      });
+    });
+</script>
+
+<!--Scroll to top-->
+<script>
+	$(document).ready(function(){
+      $('#btn-top>a').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        && location.hostname == this.hostname) {
+          var $target = $(this.hash);
+          $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+          if ($target.length) {
+            var targetOffset = $target.offset().top;
+            $('html,body').animate({scrollTop: targetOffset}, 800);
+           return false;
+          }
+        }
+      });
+    });
+</script>
+
+<!--Check valid information for form-->
+<script>
+	function checkValid() {
+//		check name
+		var x, text;
+		x = document.getElementById("name").value;
+		if (x == "") {
+			text = "Please input your name !";
+			document.getElementById("checkname").style.display = "block";
+			document.getElementById("checkname").innerHTML = text;
+			return false;
+		}
+		else
+			document.getElementById("checkname").style.display = "none";
+		
+//		check phone number
+		var x, text;
+		var regExp = /(09|01[2|6|8|9])+([0-9]{8})\b/g;
+		x = document.getElementById("phonenum").value;
+		
+		if (regExp.test(x)) {
+			document.getElementById("checkphone").style.display = "none";
+		}
+		else {
+			text = "Phone number must has 10 degits (0xxxxxxxxx) !";
+			document.getElementById("checkphone").style.display = "block";
+			document.getElementById("checkphone").innerHTML = text;
+			return false;
+		}
+		
+//		check email
+		var x, text;
+		var regExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+		x = document.getElementById("email").value;
+		if (regExp.test(x)) {
+			document.getElementById("checkemail").style.display = "none";
+		}
+		else {
+			text = "Invalid email! It must be example@abc.xyz";
+			document.getElementById("checkemail").style.display = "block";
+			document.getElementById("checkemail").innerHTML = text;
+			return false;
+		}
+			
+		return true;
+	}
+	
+	
+	
+</script>
+
+</head>
+<body>
+<nav class="navbar-inverse navbar-fixed-top" >
+  <div class="container"> 
+    <!-- Brand and toggle ge t grouped for better mobile display -->
+    <div class="navbar-header" style="margin-left: -15px;">
+<!--     Menu button for moblie display-->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      
+      <a class="navbar-brand" href="index.html" style="font-family: 'Kumar One', cursive;; font-size: 30px; color: white; margin-top: 7px; margin-bottom: -5px"> T Studio </a>
+      <div style="float: left;" class="hidden-xs hidden-sm">
+      	  <form class="searchbox" action="/action_page.php" style="width:250px">
+		    <input type="text" style="border-radius: 5px 0 0 5px;" placeholder="Search..." name="search2">
+		    <button type="submit"><i class="fa fa-search" style="color: black;"></i></button>
+		  </form>
+      </div>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myInverseNavbar2">
+     
+      <ul class="nav navbar-nav navbar-right" style="font-family: 'Coda', cursive;">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#team"> About us</a></li>
+        <li><a href="#contact"> Contact</a></li>
+        <li><a href="#" onclick="document.getElementById('login').style.display='block'" style="width:auto;"> <i class="fa fa-user"></i> Log in</a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+ 
+<div class="container" id="home">
+    <div class="row">
+     <p><br><br></p>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xs-12">
+        <div id="carousel-299058" class="carousel slide slide-align">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-299058" data-slide-to="0" class=""> </li>
+            <li data-target="#carousel-299058" data-slide-to="1" class="active"> </li>
+            <li data-target="#carousel-299058" data-slide-to="2" class=""> </li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item"> <img class="img-responsive" src="Images/170506_carpenter_0168-2.jpg" alt="thumb">
+            </div>
+            
+            <div class="item active"> <img class="img-responsive" src="Images/20140914_Hayley_Matt_0673.jpg" alt="thumb">
+            </div>
+            
+            <div class="item"> <img class="img-responsive" src="Images/20140426_Laura_Tim_3506.jpg" alt="thumb">
+            </div>
+          </div>
+          <a class="left carousel-control" href="#carousel-299058" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel-299058" data-slide="next"><span class="icon-next"></span></a></div>
+      </div>
+    </div>
+  </div>
+     
+      
+<section id="portfolio">
+ <div class="container setbgcl">
+  <div class="row" >
+    <p><br><br></p>
+	<h1 style="margin-left: 15px;">Portfolio</h1>
+    <p style="margin-left: 15px;">Each album has a story...</p>   
+	<div class="row" >
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="thumbnail"> 
+           <a href="portfolio_1.html"><img src="Images/Sakura/thumbnail.JPG" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+           <div class="caption">
+              <h3>Sakura</h3>
+              <p>Cherry blossoms are an iconic feature of the springtime landscape. They symbolize for the spirit of beauty, life... <a href="portfolio_1.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="thumbnail"> 
+           <a href="portfolio_2.html"><img src="Images/Red/thumbnail.JPG" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+            <div class="caption">
+              <h3>Mapple Leaves</h3>
+              <p>In the fall of leaves<br>In the hustle of breeze<br>In the curve of streams... <a href="portfolio_2.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 hidden-sm hidden-xs">
+          <div class="thumbnail"> 
+           <a href="portfolio_3.html"><img src="Images/Dream/thumbnail.jpg" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+            <div class="caption">
+              <h3>Dream Catcher</h3>
+              <p>You don’t just live in this world, or your home, or your skin. You also live in someone’s eyes. Be gentle, dreamy, and beautiful... <a href="portfolio_3.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="thumbnail"> 
+           <a href="portfolio_4.html"><img src="Images/HolidayTrip/thumbnail.JPG" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+            <div class="caption">
+              <h3>Journey</h3>
+              <p>Life is full of journey. Pick up your luggage and let us be accompanied you whenever wherever... <a href="portfolio_4.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+          <div class="thumbnail"> 
+           <a href="portfolio_5.html"><img src="Images/Darkness/thumbnail.jpg" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+            <div class="caption">
+              <h3>Darkness</h3>
+              <p>Deep into the pitch darkness, long we stood there, wondering, fearing, and doubting. If you can not... <a href="portfolio_5.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
+          <div class="thumbnail"> 
+           <a href="portfolio_6.html"><img src="Images/Chít/thumbnail.jpg" alt="Thumbnail Image 1" class="img-responsive hover-shadow"></a>
+            <div class="caption">
+              <h3>Love, Chít <i class="fa"></i> </h3>
+              <p>In its flawless grace and superior self-sufficiency I have seen a symbol of the perfect beauty and... <a href="portfolio_6.html">[see more]</a></p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="text-center"><i class="fa fa-heart-o"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart-o"></i></p>
+  </div>  
+  </section>
+
+
+<section id="service">
+  <div class="container setbgcl">
+   
+    <div class="row">
+     <p><br><br></p>
+      <div class="col-lg-6">
+        <h1>Our Services</h1>
+        <p>Choose an option</p>
+        <ul id="myTab1" class="nav nav-tabs">
+          <li class="active"> <a href="#home1" data-toggle="tab">Pack 1</a> </li>
+          <li> <a href="#pane2" data-toggle="tab">Pack 2</a></li>
+          <li> <a href="#pane3" data-toggle="tab">Pack 3</a> </li>
+          <li> <a href="#pane4" data-toggle="tab">Pack 4</a> </li>
+        </ul>
+        <div id="myTabContent1" class="tab-content">
+          <div class="tab-pane in active" id="home1">
+            <p class="text-center"><img src="Images/pack01.png" alt="Pack 1" style="margin-top: 5px;" class="image-responsive hover-shadow cursor" onClick="openModal();currentSlide(1)"></p>
+           	<p style="text-align: center;"><i>Click on photo for more information</i></p>
+            <p><br></p>
+            <p class="text-center"><a href="pack01_book.html" class="payment" style="text-decoration: none;">Book now !</a></p>
+            <p><br></p>
+          </div>
+          
+          <div class="tab-pane fade" id="pane2">
+            <p class="text-center"><img src="Images/pack02.png" alt="Pack 2" style="margin-top: 5px;" class="image-responsive hover-shadow cursor" onClick="openModal();currentSlide(2)"></p>
+            <p style="text-align: center;"><i>Click on photo for more information</i></p>
+            <p><br></p>
+            <p class="text-center"><a href="pack02_book.html" class="payment" style="text-decoration: none;">Book now !</a></p>
+            <p><br></p>
+          </div>
+          
+          <div class="tab-pane fade" id="pane3">
+            <p class="text-center"><img src="Images/pack03.png" alt="Pack 3" style="margin-top: 5px;" class="image-responsive hover-shadow cursor" onClick="openModal();currentSlide(3)"></p>
+            <p style="text-align: center;"><i>Click on photo for more information</i></p>
+            <p><br></p>
+            <p class="text-center"><a href="pack03_book.html" class="payment" style="text-decoration: none;">Book now !</a></p>
+            <p><br></p>
+          </div>
+          
+          <div class="tab-pane fade" id="pane4">
+            <p class="text-center"><img src="Images/pack04.png" alt="Pack 4" style="margin-top: 5px;" class="image-responsive hover-shadow cursor" onClick="openModal();currentSlide(4)"></p>
+            <p style="text-align: center;"><i>Click on photo for more information</i></p>
+            <p><br></p>
+            <p class="text-center"><a href="pack04_book.html" class="payment" style="text-decoration: none;">Book now !</a></p>
+            <p><br></p>
+          </div>
+          
+        </div>
+        <div id="myModal" class="modal">
+		  <span class="close cursor" onclick="closeModal()"> &times;</span>
+		  <div class="modal-content animate">
+			<div class="mySlides">
+			  <img src="Images/pack01_index.png" style="width:100%">
+			</div>
+			<div class="mySlides">
+			  <img src="Images/pack02_index.png" style="width:100%">
+			</div>
+			<div class="mySlides">
+			  <img src="Images/pack03_index.png" style="width:100%">
+			</div>
+			<div class="mySlides">
+			  <img src="Images/pack04_index.png" style="width:100%">
+			</div>
+
+			<a class="prev-v2" onclick="plusSlides(-1)"> &#10094;</a>
+			<a class="next-v2" onclick="plusSlides(1)"> &#10095;</a>
+		  </div>
+		</div>
+     
+      </div>
+      
+      <div class="col-lg-6 ">
+  		<h1>『Moments』</h1>
+  		<h3 style="font-family: 'Dancing Script', cursive;"> "Photos for now, later, and forever." </h3>
+  		<p style="text-align: justify; line-height: 22px">Time and time we've heard from our couples... "The photos were the most important part of our wedding!"  While we know the MOST important part is each other, your families, and the day itself, the photos are what carry the power to relive that magic over and over again.  Not only for you, but for the generations who will treasure them after you.</p>
+  		<p style="text-align: justify; line-height: 22px">We offer four packages of wedding photography, each with its own flavor to suit your day perfectly. Let us know how wonderful the wedding photography TStudio has presented for your memorable day.</p>
+		<div class="rating">
+			<input type="checkbox" id="st1" value="1" />
+			<label for="st1"></label>
+			<input type="checkbox" id="st2" value="2" />
+			<label for="st2"></label>
+			<input type="checkbox" id="st3" value="3" />
+			<label for="st3"></label>
+			<input type="checkbox" id="st4" value="4" />
+			<label for="st4"></label>
+			<input type="checkbox" id="st5" value="5" />
+			<label for="st5"></label>
+		</div>
+		
+		<p style="margin-bottom: -15px;">4.4 average based on 381 reviews.</p>
+	  	<hr>
+ 	  	<div class="row" style="margin-bottom: 10px;">
+ 	  		<div class="col-xs-2"> <div>5 stars</div> </div>
+ 	  		<div class="col-xs-8"> <div class="bar-container"> <div class="bar-5"></div> </div> </div>
+ 	  		<div class="col-xs-2" style="text-align: right"> 240 </div>
+ 	  	</div>
+ 	  	<div class="row" style="margin-bottom: 10px;">
+ 	  		<div class="col-xs-2"> <div>4 stars</div> </div>
+ 	  		<div class="col-xs-8"> <div class="bar-container"> <div class="bar-4"></div> </div> </div>
+ 	  		<div class="col-xs-2" style="text-align: right"> 96 </div>
+ 	  	</div>
+ 	  	<div class="row" style="margin-bottom: 10px;">
+ 	  		<div class="col-xs-2"> <div>3 stars</div> </div>
+ 	  		<div class="col-xs-8"> <div class="bar-container"> <div class="bar-3"></div> </div> </div>
+ 	  		<div class="col-xs-2" style="text-align: right"> 19 </div>
+ 	  	</div>
+ 	  	<div class="row" style="margin-bottom: 10px;">
+ 	  		<div class="col-xs-2"> <div>2 stars</div> </div>
+ 	  		<div class="col-xs-8"> <div class="bar-container"> <div class="bar-2"></div> </div> </div>
+ 	  		<div class="col-xs-2" style="text-align: right"> 9 </div>
+ 	  	</div>
+ 	  	<div class="row" style="margin-bottom: 10px;">
+ 	  		<div class="col-xs-2"> <div>1 stars</div> </div>
+ 	  		<div class="col-xs-8"> <div class="bar-container"> <div class="bar-1"></div> </div> </div>
+ 	  		<div class="col-xs-2" style="text-align: right"> 17 </div>
+ 	  	</div>
+  	  </div>
+    </div>
+    <p class="text-center"><i class="fa fa-heart-o"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart-o"></i></p>
+  </div>
+   
+</section>
+
+
+<section id="team">
+  <div class="container setbgcl">
+    <div class="row">
+      <p><br><br></p>
+       <div class="col-lg-6">
+       		<div class="text-center">
+       			<div style="margin: 80px 20px;">
+       				<h3>Preface</h3>
+       				<br>
+       				<p style="text-align: justify; line-height: 22px;"><b>The most important thing to us </b>is To let your stories tell themselves through our images.  We're always aiming for powerfully emotional, revealing, and narrative portraiture.  <b>Being intrigued by</b>  The subtleties of relationships, the tricks of light, the beauty in the everyday, what do we bring to our clients that they treasure forever?  Fresh, fun, timeless and true photography... imbued with an element of humor, magic, and the unexpected!</p>
+       				<p>------------------------------------</p>
+       				<h3 style="font-family: 'Shadows Into Light', cursive;">Social Media</h3>
+					<p style="font-size: 20px"> <i class="fa fa-facebook-official"></i> <i class="fa fa-instagram"></i> <i class="fa fa-twitter"></i> </p>
+       			</div>
+       		</div>
+       </div>
+       
+       <div class="col-lg-6">
+        <h1>About Us</h1>
+        <br>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/founder.jpg" alt="Thumbnail Image 1" class="img-responsive round"> 
+            	<div class="overlay">Manager<br> <a href="https://www.facebook.com/ttmkcv" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/DSC_2486.JPG" alt="Thumbnail Image 1" class="img-responsive round">
+            	<div class="overlay">Model<br> <a href="https://www.facebook.com/minh.khue.1910" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+           	</div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/IMG_9277.JPG" alt="Thumbnail Image 1" class="img-responsive round"> 
+            	<div class="overlay">Photographer<br> <a href="https://www.facebook.com/linhbui99" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+            </div>
+          </div>      
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/designer.jpg" alt="Thumbnail Image 1" class="img-responsive round"> 
+            	<div class="overlay">Designer<br> <a href="https://www.facebook.com/hi.im.pine" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/makeup.jpg" alt="Thumbnail Image 1" class="img-responsive round"> 
+            	<div class="overlay">Make-up<br> <a href="https://www.facebook.com/anhquang.trinh.9" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+            </div>
+		  </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="text-center box"> 
+            	<img src="Images/support.jpg" alt="Thumbnail Image 1" class="img-responsive round"> 
+            	<div class="overlay">Supporting<br><a href="https://www.facebook.com/profile.php?id=100011321977066" target="_blank"><img src="Images/fb.png"/> </a> <img src="Images/insta.png"/></div>
+            </div>
+		  </div>
+		  
+		</div>
+        <p><br></p>
+      </div>
+      
+    </div>
+    <p class="text-center"><i class="fa fa-heart-o"></i> <i class="fa fa-heart"></i> <i class="fa fa-heart-o"></i></p>
+  </div>
+</section>
+
+
+<section id="contact">
+  <div class="container setbgcl">
+    <div class="row">
+     <p><br><br></p>
+      <div class="col-lg-6">
+       <h1>Contact Us</h1>
+		<p style="font-size: 13px;">If you have any concern related to our service, do not hesitate to contact us via ...</p>
+
+		<div class="form-responsive">
+		  <form action="/action_page.php" onSubmit="return checkValid();">
+			<div class="row">
+			  <div class="col-25">
+				<label for="fname">Your name</label>
+			  </div>
+			  <div class="col-75">
+				<input type="text" id="name" name="name" placeholder="Your name...">
+			  </div>
+			</div>
+			 <p id="checkname" style="margin-left: 130px; color: red; font-style: italic; display: none;"></p>
+			<div class="row">
+			  <div class="col-25">
+				<label for="lname">Phone number</label>
+			  </div>
+			  <div class="col-75">
+				<input type="text" id="phonenum" name="phonenum" onClick="checkValid()" placeholder="Phone number...">
+			  </div>
+			</div>
+			<p id="checkphone" style="margin-left: 130px; color: red; font-style: italic; display: none;"></p>
+			<div class="row">
+			  <div class="col-25">
+				<label for="lname">Email</label>
+			  </div>
+			  <div class="col-75">
+				<input type="text" id="email" name="email" onClick="checkValid()" placeholder="Email...">
+			  </div>
+			</div>
+			<p id="checkemail" style="margin-left: 130px; color: red; font-style: italic; display: none;"></p>
+			<div class="row">
+			  <div class="col-25">
+				<label for="subject">Feedback</label>
+			  </div>
+			  <div class="col-75">
+				<textarea id="feedback" name="feedback" onClick="checkValid()" placeholder="Write something.." style="height:200px"></textarea>
+			  </div>
+			</div>
+			<div class="row">
+			  <input type="submit" value="Send" onClick="checkValid()" class="subscribe">
+			</div>
+		  </form>
+		</div>
+      
+     </div>
+     
+     <div class="col-lg-6"> 
+        	<p><br></p>
+        	<div class="maps-container">
+        	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.1471714843483!2d106.64902269089363!3d10.876408887533776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529e0c8c1c3c3%3A0x7e5535c16bf38f7b!2zMzQgVHLhuqduIFRo4buLIEPhu50sIFF14bqtbiAxMiwgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1529772428805" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        	</div>
+          
+     </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<div class="container well" style="background-color: #262626">
+  <div class="row">
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4 hidden-sm hidden-xs" style="color: white;">
+      <span class="text-right"> </span>
+  <h3>Newsletter</h3>
+  <br>
+  <p>You can trust us. We only send promo offers,<br> not a single spam.</p>
+  <br>
+  <table>
+  <tbody>
+    <tr>
+      <td><input type="email" name="email" class="email form-control"/></td>
+    </tr>
+    <tr>
+     <td><p class="text-center"><input type="submit" class="subscribe" value="Subscribe"/></p></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-lg-4 col-md-4" style="color: white;"> <span class="text-right"> </span>
+  <h3>Contact Us</h3>
+  <br>
+
+    <address>
+      <p style="font-size: 18px"><strong>&emsp;&emsp;T Studio</strong><br></p>
+      <p><i class="fa fa-home"></i> &emsp; 34/4A TA32 Street, Thoi An Ward<br>
+      &emsp; &emsp; District 12, Ho Chi Minh City, Vietnam<br>
+     <i class="fa fa-phone-square"></i> &emsp; (028) 7777 7777 <br>
+     &emsp; &emsp; +84 168 563 8900</p>
+    </address>
+
+      <address>
+        <p>&emsp; &emsp; <strong>Phan Thanh Tu</strong><br>
+        <i class="fa fa-send"></i> &emsp; <a href="mailto:#">phanthanhtu9x@gmail.com</a></p>
+      </address>
+</div>
+ <div class="col-xs-12 col-sm-6 col-lg-4 col-md-4 " style="color: white;">
+  <h3>Latest News</h3>
+  <br>
+  <div class="media-object-default" >
+  <p>
+  <a href="https://ngoisao.net/tin-tuc/cuoi-hoi/co-dau/vay-cuoi-he-thu-phom-bong-benh-cong-chua-3767645.html" target="_blank" style="text-decoration: none; color: white;" onMouseOver="this.style.color='#007acc'" onMouseOut="this.style.color='#ffffff'">
+	  <div class="media">
+	  <div class="media-body">
+		  <h4 class="media-heading"> <i class="fa fa-newspaper-o"></i> Wedding Dresses Summer Collection: "Princess"</h4>
+		With the advantages that can fit all shapes, this design is expected to be the first choice of brides.</div>
+		  <div class="media-right"> <img class="media-object" src="Images/news_1.jpg" width="75px" height="75px" alt="placeholder image"></div>
+	</div>
+</a>
+<br/>
+<a href="http://kenh14.vn/anh-xuc-dong-le-cuoi-tap-the-cua-41-cap-vo-chong-khuyet-tat-o-ha-noi-20180623195156304.chn" target="_blank" style="text-decoration: none; color: white;" onMouseOver="this.style.color='#007acc'" onMouseOut="this.style.color='#ffffff'">
+	<div class="media">
+	  <div class="media-body">
+		<h4 class="media-heading"> <i class="fa fa-newspaper-o"></i> Celebrating the wedding ceremony of 41 disabled couples in Hanoi</h4>
+		41 couples with disabilities can not hide the joy and tears of happiness when they attend a group wedding for people in the same circumstances as themselves.</div>
+	  <div class="media-right">  <img class="media-object" src="Images/news_2.jpg" width="75px" height="75px" alt="placeholder image"></div>
+	</div>
+</a>
+</p>
+</div>
+</div>
+  </div>
+</div>
+
+<!--Login form modal-->
+<div id="login" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('login').style.display='none'" class="close-login" title="Close Modal"> &times;</span>
+      <img src="Images/avatar.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container-login">
+      <div style="margin: 10px;">
+      	  <p><b>Username</b></p>
+		  <input type="text" placeholder="Enter Username" name="uname" style="margin-bottom: 14px; margin-top: -5px;" required>
+
+		  <p><b>Password</b></p>
+		  <input type="password" placeholder="Enter Password" name="psw" style="margin-bottom: 14px; margin-top: -5px;" required>
+
+		  <button type="submit" class="login-button">Login</button>
+		  <label>
+			<input type="checkbox" checked="checked" name="remember"> Remember me
+		  </label>
+      </div>
+      <div class="social-login" style="">
+      <h5>Or fast log in with</h5>
+      <a href="#"> <i class="fa fa-facebook-official" style="color: #3B5998"></i> </a>
+      <a href="#"> <i class="fa fa-google-plus-official" style="color: #dd4b39"></i> </a>
+      <a href="#"> <i class="fa fa-twitter-square" style="color: #55ACEE"></i> </a>
+      <span class="psw" style="float: right; font-size: 13px;"> <a href="#">Forgot password?</a></span>
+      </div>
+      
+    </div> 
+  </form>
+</div>
+
+<!--back-to-top-->
+<div id="btn-top"><a href="#home"><button id="myBtn" title="Go to top"></button></a></div>
+
+<script>
+	// When the user scrolls down 50px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+			document.getElementById("myBtn").style.display = "block";
+		} else {
+			document.getElementById("myBtn").style.display = "none";
+		}
+	}
+</script>
+
+<!--Modal login js-->
+<script>
+// Get the modal
+var modal = document.getElementById('login');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+<!--Modal Slide for each pack-->
+<script>	
+	function openModal() {
+	  document.getElementById('myModal').style.display = "block";
+	}
+
+	function closeModal() {
+	  document.getElementById('myModal').style.display = "none";
+	}
+
+	var slideIndex = 1;
+	  showSlides(slideIndex);
+	
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		  slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		  dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+</script>
+
+<footer class="text-center" style="margin-top: -10px">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Copyright © 2018 tupth.blogspot.com. All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+
+</body>
+
+<!--Chatbox via Facebook-->
+<style>.fb-livechat, .fb-widget{display: none}.ctrlq.fb-button, .ctrlq.fb-close{position: fixed; right: 20px; cursor: pointer}.ctrlq.fb-button{z-index: 4; background: url(Images/messenger.png) repeat center #0084ff; width: 50px; height: 50px; text-align: center; bottom: 70px; border: 0; outline: 0; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; -ms-border-radius: 50%; -o-border-radius: 50%; box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16); -webkit-transition: box-shadow .2s ease; background-size: 80%; transition: all .2s ease-in-out}.ctrlq.fb-button:focus, .ctrlq.fb-button:hover{transform: scale(1.1); box-shadow: 0 2px 8px rgba(0, 0, 0, .09), 0 4px 40px rgba(0, 0, 0, .24)}.fb-widget{background: #fff; z-index: 4; position: fixed; width: 360px; height: 435px; overflow: hidden; opacity: 0; bottom: 0; right: 24px; border-radius: 6px; -o-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -moz-box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -o-box-shadow: 0 5px 40px rgba(0, 0, 0, .16)}.fb-credit{text-align: center; margin-top: 8px}.fb-credit a{transition: none; color: #bec2c9; font-family: Helvetica, Arial, sans-serif; font-size: 12px; text-decoration: none; border: 0; font-weight: 400}.ctrlq.fb-overlay{z-index: 0; position: fixed; height: 100vh; width: 100vw; -webkit-transition: opacity .4s, visibility .4s; transition: opacity .4s, visibility .4s; top: 0; left: 0; background: rgba(0, 0, 0, .05); display: none}.ctrlq.fb-close{z-index: 4; padding: 0 6px; background: #365899; font-weight: 700; font-size: 12px; color: #fff; margin: 8px; border-radius: 3px}.ctrlq.fb-close::after{content: "X"; font-family: sans-serif}.bubble{width: 20px; height: 20px; background: #c00; color: #fff; position: absolute; z-index: 4; text-align: center; vertical-align: middle; top: -2px; left: -5px; border-radius: 50%;}.bubble-msg{width: 120px; left: -140px; top: 5px; position: relative; background: rgba(59, 89, 152, .8); color: #fff; padding: 5px 8px; border-radius: 8px; text-align: center; font-size: 13px;}</style>
+<div class="fb-livechat"> <div class="ctrlq fb-overlay"></div><div class="fb-widget"> <div class="ctrlq fb-close"></div><div class="fb-page" data-href="https://www.facebook.com/tstudio.5483" data-tabs="messages" data-width="360" data-height="400" data-small-header="true" data-hide-cover="true" data-show-facepile="false"> </div><div class="fb-credit"> <a href="https://www.facebook.com/tstudio.5483" target="_blank">Powered by PhanThanhTu</a> </div><div id="fb-root"></div></div><a href="https://m.me/tstudio.5483" title="Message us via Facebook" class="ctrlq fb-button"> <div class="bubble">1</div></a></div>
+<script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script><script>$(document).ready(function(){function detectmob(){if( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) ){return true;}else{return false;}}var t={delay: 125, overlay: $(".fb-overlay"), widget: $(".fb-widget"), button: $(".fb-button")}; setTimeout(function(){$("div.fb-livechat").fadeIn()}, 8 * t.delay); if(!detectmob()){$(".ctrlq").on("click", function(e){e.preventDefault(), t.overlay.is(":visible") ? (t.overlay.fadeOut(t.delay), t.widget.stop().animate({bottom: 0, opacity: 0}, 2 * t.delay, function(){$(this).hide("slow"), t.button.show()})) : t.button.fadeOut("medium", function(){t.widget.stop().show().animate({bottom: "30px", opacity: 1}, 2 * t.delay), t.overlay.fadeIn(t.delay)})})}});</script>
+
+</html>
